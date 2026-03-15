@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<!-- saved from url=(0198)file:///C:/Users/Admin/Downloads/%E0%B8%99%E0%B8%A7%E0%B8%B1%E0%B8%95%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1_%E0%B8%99%E0%B8%B2%E0%B8%94%E0%B8%A7%E0%B8%87%E0%B9%83%E0%B8%88%E0%B8%94%E0%B8%B5%20(3).html -->
+<html lang="th"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>นาด้วงใจดี – สื่อสัญญาณเตือนฆ่าตัวตาย</title>
+<link href="./นาด้วงใจดี – สื่อสัญญาณเตือนฆ่าตัวตาย_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --teal:    #0d9e8a;
+    --teal2:   #07c8ae;
+    --navy:    #0b2e4a;
+    --navy2:   #164e72;
+    --red:     #e53e3e;
+    --orange:  #f6883a;
+    --yellow:  #f5c842;
+    --green:   #38a169;
+    --light:   #f0faf8;
+    --white:   #ffffff;
+    --gray:    #e8f4f2;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Sarabun', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* BG */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 10% 20%, rgba(13,158,138,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 80%, rgba(22,78,114,0.4) 0%, transparent 60%),
+      linear-gradient(160deg, #0b2e4a 0%, #0d3d55 50%, #0b2e4a 100%);
+    pointer-events: none;
+  }
+
+  /* HEADER */
+  header {
+    position: relative; z-index: 10;
+    text-align: center;
+    padding: 40px 20px 24px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(13,158,138,0.2);
+    border: 1px solid var(--teal);
+    color: var(--teal2);
+    font-size: 13px; font-weight: 600;
+    padding: 5px 16px; border-radius: 20px;
+    letter-spacing: 1px; margin-bottom: 14px;
+  }
+
+  header h1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: clamp(28px, 6vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 0%, var(--teal2) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  header p {
+    margin-top: 10px; font-size: 16px;
+    color: rgba(255,255,255,0.65); max-width: 560px; margin-inline: auto;
+  }
+
+  .hospital-tag {
+    margin-top: 12px;
+    font-size: 13px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.5px;
+  }
+
+  /* TABS */
+  .tabs {
+    position: relative; z-index: 10;
+    display: flex; justify-content: center; gap: 8px;
+    padding: 0 20px 24px; flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    padding: 9px 20px; border-radius: 30px; border: 1.5px solid rgba(13,158,138,0.35);
+    background: rgba(13,158,138,0.08); color: rgba(255,255,255,0.7);
+    font-family: 'Sarabun', sans-serif; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: all .25s;
+  }
+  .tab-btn:hover { border-color: var(--teal); color: white; background: rgba(13,158,138,0.18); }
+  .tab-btn.active {
+    background: var(--teal); border-color: var(--teal);
+    color: white; box-shadow: 0 4px 20px rgba(13,158,138,0.4);
+  }
+
+  /* SECTIONS */
+  .section { display: none; position: relative; z-index: 10; padding: 0 16px 60px; max-width: 900px; margin: 0 auto; }
+  .section.active { display: block; animation: fadeUp .4s ease; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTION TITLE */
+  .sec-title {
+    font-family: 'Kanit', sans-serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--teal2); margin-bottom: 6px;
+  }
+  .sec-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+
+  /* CARDS GRID */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+
+  .card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 20px;
+    cursor: pointer; transition: all .25s;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute; inset: 0; border-radius: 16px;
+    background: linear-gradient(135deg, transparent 60%, rgba(13,158,138,0.08));
+    opacity: 0; transition: opacity .25s;
+  }
+  .card:hover { transform: translateY(-3px); border-color: rgba(13,158,138,0.4); box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
+  .card:hover::before { opacity: 1; }
+
+  .card-icon { font-size: 36px; margin-bottom: 10px; }
+  .card-title { font-family: 'Kanit', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .card-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+  .card.urgent { border-color: rgba(229,62,62,0.4); }
+  .card.urgent:hover { border-color: var(--red); box-shadow: 0 12px 32px rgba(229,62,62,0.2); }
+  .card.warning { border-color: rgba(246,136,58,0.4); }
+  .card.warning:hover { border-color: var(--orange); box-shadow: 0 12px 32px rgba(246,136,58,0.2); }
+
+  /* LEVEL BADGE */
+  .level-badge {
+    display: inline-block; font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; letter-spacing: 0.5px;
+  }
+  .level-red   { background: rgba(229,62,62,0.2); color: #fc8181; border: 1px solid rgba(229,62,62,0.4); }
+  .level-orange{ background: rgba(246,136,58,0.2); color: #fbd38d; border: 1px solid rgba(246,136,58,0.4); }
+  .level-green { background: rgba(56,161,105,0.2); color: #68d391; border: 1px solid rgba(56,161,105,0.4); }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 100;
+    background: rgba(0,0,0,0.7); backdrop-filter: blur(6px);
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-overlay.open { display: flex; animation: fadeIn .2s ease; }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .modal {
+    background: linear-gradient(145deg, #0f3a57, #0d2e45);
+    border: 1px solid rgba(13,158,138,0.3);
+    border-radius: 20px; padding: 30px;
+    max-width: 500px; width: 100%; max-height: 85vh; overflow-y: auto;
+    animation: scaleIn .25s ease;
+  }
+  @keyframes scaleIn { from { transform: scale(.94); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+  .modal-close {
+    float: right; background: rgba(255,255,255,0.08); border: none;
+    color: white; width: 32px; height: 32px; border-radius: 50%;
+    cursor: pointer; font-size: 18px; line-height: 32px; text-align: center;
+    transition: background .2s;
+  }
+  .modal-close:hover { background: rgba(229,62,62,0.4); }
+
+  .modal h3 { font-family: 'Kanit', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .modal p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 12px; }
+  .modal ul { padding-left: 18px; }
+  .modal ul li { font-size: 14px; color: rgba(255,255,255,0.75); margin-bottom: 6px; line-height: 1.6; }
+
+  .action-box {
+    background: rgba(13,158,138,0.12);
+    border: 1px solid rgba(13,158,138,0.3);
+    border-radius: 12px; padding: 14px 16px; margin-top: 14px;
+  }
+  .action-box .action-title { font-weight: 700; color: var(--teal2); font-size: 14px; margin-bottom: 6px; }
+  .action-box ul li { color: rgba(255,255,255,0.8); }
+
+  /* CHECKLIST */
+  .checklist { display: flex; flex-direction: column; gap: 10px; }
+
+  .check-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 14px 16px; cursor: pointer; transition: all .2s;
+  }
+  .check-item:hover { border-color: rgba(13,158,138,0.4); background: rgba(13,158,138,0.06); }
+  .check-item.checked { border-color: rgba(56,161,105,0.5); background: rgba(56,161,105,0.08); }
+  .check-item.checked .check-box { background: var(--green); border-color: var(--green); }
+  .check-item.checked .check-box::after { content: '✓'; }
+
+  .check-box {
+    width: 22px; height: 22px; min-width: 22px; border-radius: 6px;
+    border: 2px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; transition: all .2s;
+  }
+
+  .check-text { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+
+  /* RESULT BOX */
+  .result-box {
+    display: none; margin-top: 16px;
+    border-radius: 14px; padding: 18px 20px; text-align: center;
+    animation: fadeUp .3s ease;
+  }
+  .result-box.show { display: block; }
+  .result-box.high { background: rgba(229,62,62,0.15); border: 1.5px solid rgba(229,62,62,0.5); }
+  .result-box.mid  { background: rgba(246,136,58,0.15); border: 1.5px solid rgba(246,136,58,0.5); }
+  .result-box.low  { background: rgba(56,161,105,0.15); border: 1.5px solid rgba(56,161,105,0.5); }
+
+  .result-icon { font-size: 40px; margin-bottom: 8px; }
+  .result-title { font-family: 'Kanit', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+  .result-desc  { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.8); }
+
+  .btn-reset {
+    margin-top: 12px; padding: 10px 24px; border-radius: 30px;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    color: white; font-family: 'Sarabun', sans-serif; font-size: 14px;
+    cursor: pointer; transition: all .2s;
+  }
+  .btn-reset:hover { background: rgba(255,255,255,0.18); }
+
+  /* HOTLINE BAR */
+  .hotline-bar {
+    background: linear-gradient(90deg, rgba(229,62,62,0.15), rgba(229,62,62,0.08));
+    border: 1px solid rgba(229,62,62,0.3);
+    border-radius: 14px; padding: 16px 20px;
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 20px; flex-wrap: wrap;
+  }
+  .hotline-icon { font-size: 30px; }
+  .hotline-text { flex: 1; }
+  .hotline-text strong { display: block; font-size: 16px; font-weight: 700; color: #fc8181; }
+  .hotline-text span { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .hotline-num {
+    font-family: 'Kanit', sans-serif; font-size: 22px; font-weight: 800;
+    color: white; background: rgba(229,62,62,0.3); padding: 8px 18px;
+    border-radius: 30px; border: 1px solid rgba(229,62,62,0.5); white-space: nowrap;
+  }
+
+  /* FLOW DIAGRAM */
+  .flow { display: flex; flex-direction: column; gap: 0; }
+  .flow-step {
+    display: flex; align-items: flex-start; gap: 14px; position: relative;
+  }
+  .flow-step:not(:last-child)::after {
+    content: ''; position: absolute; left: 19px; top: 44px;
+    width: 2px; height: calc(100% - 10px);
+    background: linear-gradient(to bottom, var(--teal), transparent);
+  }
+  .flow-num {
+    width: 40px; height: 40px; min-width: 40px; border-radius: 50%;
+    background: var(--teal); display: flex; align-items: center; justify-content: center;
+    font-family: 'Kanit', sans-serif; font-size: 16px; font-weight: 800;
+    box-shadow: 0 0 0 4px rgba(13,158,138,0.15);
+  }
+  .flow-content {
+    flex: 1; background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07); border-radius: 12px;
+    padding: 12px 16px; margin-bottom: 14px;
+  }
+  .flow-content strong { display: block; font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--teal2); }
+  .flow-content p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+  /* FOOTER */
+  footer {
+    position: relative; z-index: 10;
+    text-align: center; padding: 20px;
+    font-size: 12px; color: rgba(255,255,255,0.25);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* PROGRESS DOTS */
+  .check-progress {
+    text-align: right; font-size: 13px;
+    color: rgba(255,255,255,0.4); margin-bottom: 12px;
+  }
+  .check-progress span { color: var(--teal2); font-weight: 700; }
+
+  @media (max-width: 480px) {
+    .cards { grid-template-columns: 1fr; }
+    header h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="badge">🏥 นวัตกรรมสุขภาพจิต · โรงพยาบาลนาด้วง</div>
+  <h1>นาด้วงใจดี</h1>
+  <p>สื่อดิจิทัลเฝ้าระวังสัญญาณเตือนการฆ่าตัวตาย<br>สำหรับบุคลากร อสม. และประชาชนในชุมชน</p>
+  <div class="hospital-tag">โรงพยาบาลนาด้วง · จังหวัดเลย · ปีงบประมาณ ๒๕๖๙</div>
+</header>
+
+<!-- TABS -->
+<nav class="tabs">
+  <button class="tab-btn active" onclick="showTab(&#39;signs&#39;)">🚨 สัญญาณเตือน</button>
+  <button class="tab-btn" onclick="showTab(&#39;check&#39;)">📋 ประเมินตนเอง</button>
+  <button class="tab-btn" onclick="showTab(&#39;8q&#39;)">🧠 แบบประเมิน 8Q</button>
+  <button class="tab-btn" onclick="showTab(&#39;9q&#39;)">💊 แบบประเมิน 9Q</button>
+  <button class="tab-btn" onclick="showTab(&#39;flow&#39;)">📞 ขั้นตอนช่วยเหลือ</button>
+  <button class="tab-btn" onclick="showTab(&#39;about&#39;)">📖 เกี่ยวกับนวัตกรรม</button>
+</nav>
+
+<!-- ===== TAB 1: สัญญาณเตือน ===== -->
+<section id="tab-signs" class="section active">
+  <div class="hotline-bar">
+    <div class="hotline-icon">📞</div>
+    <div class="hotline-text">
+      <strong>พบสัญญาณฉุกเฉิน โทรทันที!</strong>
+      <span>สายด่วนสุขภาพจิต 24 ชั่วโมง</span>
+    </div>
+    <div class="hotline-num">1323</div>
+  </div>
+
+  <div class="sec-title">สัญญาณเตือนที่ต้องรู้จัก</div>
+  <div class="sec-sub">แบ่งตามระดับความเร่งด่วน — คลิกที่การ์ดเพื่อดูรายละเอียดและวิธีช่วยเหลือ</div>
+
+  <div class="cards">
+    <div class="card urgent" onclick="openModal(&#39;m1&#39;)">
+      <div class="level-badge level-red">🔴 ด่วนมาก — ต้องช่วยทันที</div>
+      <div class="card-icon">😡</div>
+      <div class="card-title">พูดหรือเขียนอำลา</div>
+      <div class="card-desc">พูดว่า "ขอลาทุกคน" "ไม่อยากอยู่แล้ว" โพสต์ข้อความบอกลา หรือแจกของรักให้คนอื่น</div>
+    </div>
+    <div class="card urgent" onclick="openModal(&#39;m2&#39;)">
+      <div class="level-badge level-red">🔴 ด่วนมาก — ต้องช่วยทันที</div>
+      <div class="card-icon">🔪</div>
+      <div class="card-title">เตรียมอุปกรณ์ทำร้ายตัวเอง</div>
+      <div class="card-desc">สะสมยา เก็บเชือก มีด หรือสิ่งของที่ใช้ทำร้ายตัวเองไว้ในที่ที่เข้าถึงง่าย</div>
+    </div>
+    <div class="card urgent" onclick="openModal(&#39;m3&#39;)">
+      <div class="level-badge level-red">🔴 ด่วนมาก — ต้องช่วยทันที</div>
+      <div class="card-icon">😶</div>
+      <div class="card-title">สงบผิดปกติหลังซึมเศร้า</div>
+      <div class="card-desc">หลังจากซึมเศร้ามานาน กลับดูสงบและดีขึ้นอย่างฉับพลัน อาจหมายถึงตัดสินใจแล้ว</div>
+    </div>
+    <div class="card warning" onclick="openModal(&#39;m4&#39;)">
+      <div class="level-badge level-orange">🟡 เฝ้าระวัง — ติดตามใกล้ชิด</div>
+      <div class="card-icon">🗣️</div>
+      <div class="card-title">พูดถึงการตายบ่อยๆ</div>
+      <div class="card-desc">พูดถึงการตาย ความตาย หรืออยากหายไป ไม่ว่าจะเป็นแบบจริงจังหรือเหมือนล้อเล่น</div>
+    </div>
+    <div class="card warning" onclick="openModal(&#39;m5&#39;)">
+      <div class="level-badge level-orange">🟡 เฝ้าระวัง — ติดตามใกล้ชิด</div>
+      <div class="card-icon">🚪</div>
+      <div class="card-title">แยกตัว หนีสังคม</div>
+      <div class="card-desc">ถอนตัวจากครอบครัว เพื่อน ไม่ออกจากห้อง ไม่รับโทรศัพท์ ไม่ไปทำงาน/โรงเรียน</div>
+    </div>
+    <div class="card warning" onclick="openModal(&#39;m6&#39;)">
+      <div class="level-badge level-orange">🟡 เฝ้าระวัง — ติดตามใกล้ชิด</div>
+      <div class="card-icon">😔</div>
+      <div class="card-title">รู้สึกไร้ค่า สิ้นหวัง</div>
+      <div class="card-desc">พูดซ้ำว่า "ฉันไม่มีประโยชน์" "ไม่มีอะไรดีขึ้นแล้ว" "ทุกคนจะดีกว่าถ้าฉันไม่อยู่"</div>
+    </div>
+    <div class="card" onclick="openModal(&#39;m7&#39;)">
+      <div class="level-badge level-green">🟢 สังเกต — ดูแลเพิ่มเติม</div>
+      <div class="card-icon">🍺</div>
+      <div class="card-title">ดื่มเหล้า/ยาเสพติดเพิ่มขึ้น</div>
+      <div class="card-desc">เริ่มดื่มหนักขึ้น ใช้ยาหรือสารเสพติดเพิ่มมากขึ้น อาจเป็นสัญญาณของการหนีความเจ็บปวด</div>
+    </div>
+    <div class="card" onclick="openModal(&#39;m8&#39;)">
+      <div class="level-badge level-green">🟢 สังเกต — ดูแลเพิ่มเติม</div>
+      <div class="card-icon">💸</div>
+      <div class="card-title">วิกฤตชีวิต / หนี้สิน</div>
+      <div class="card-desc">เผชิญปัญหาครอบครัว หนี้สิน ตกงาน หย่าร้าง หรือสูญเสียคนรัก โดยไม่มีใครช่วย</div>
+    </div>
+    <div class="card" onclick="openModal(&#39;m9&#39;)">
+      <div class="level-badge level-green">🟢 สังเกต — ดูแลเพิ่มเติม</div>
+      <div class="card-icon">😴</div>
+      <div class="card-title">นอนไม่หลับ / พฤติกรรมเปลี่ยน</div>
+      <div class="card-desc">นอนไม่หลับนานหลายสัปดาห์ กินน้อยลงมาก น้ำหนักลดผิดปกติ หรือพฤติกรรมเปลี่ยนแปลง</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TAB 2: ประเมินตนเอง ===== -->
+<section id="tab-check" class="section">
+  <div class="sec-title">แบบประเมินสัญญาณเตือน</div>
+  <div class="sec-sub">สำหรับ อสม. บุคลากร และครอบครัว ใช้ประเมินคนที่เป็นห่วง</div>
+
+  <div class="check-progress">ติ๊กที่พบ: <span id="checkCount">0</span> / 9 ข้อ</div>
+
+  <div class="checklist">
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-text">พูดถึงการตายหรืออยากตายบ่อยครั้ง ไม่ว่าล้อเล่นหรือจริงจัง</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-text">พูดหรือโพสต์ข้อความลาคนอื่น แจกของให้คนรอบข้าง</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-text">แยกตัวออกจากครอบครัวและเพื่อน ไม่พูดคุยกับใคร</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-text">รู้สึกไร้ค่า สิ้นหวัง บอกว่าทุกคนดีกว่าถ้าตัวเองไม่มี</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-text">มีการสะสมยา เก็บเชือก หรือวางแผนใช้วิธีทำร้ายตัวเอง</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-text">ดูสงบผิดปกติหลังจากซึมเศร้ามานาน (อาจตัดสินใจแล้ว)</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-text">ดื่มเหล้าหรือใช้ยาเสพติดเพิ่มมากขึ้นในช่วงนี้</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-text">กำลังเผชิญวิกฤตชีวิตหนักๆ เช่น หนี้สิน หย่าร้าง สูญเสีย</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-text">มีประวัติพยายามทำร้ายตัวเองหรือฆ่าตัวตายมาก่อน</div>
+    </div>
+  </div>
+
+  <div class="result-box high" id="result-high">
+    <div class="result-icon">🚨</div>
+    <div class="result-title">ความเสี่ยงสูง — ต้องช่วยทันที!</div>
+    <div class="result-desc">พบสัญญาณเตือนหลายข้อ ไม่ควรปล่อยให้อยู่คนเดียว<br>โทร <strong>1323</strong> หรือพาไป รพ.นาด้วง ทันที</div>
+    <button class="btn-reset" onclick="resetCheck()">ประเมินใหม่</button>
+  </div>
+  <div class="result-box mid" id="result-mid">
+    <div class="result-icon">⚠️</div>
+    <div class="result-title">ความเสี่ยงปานกลาง — เฝ้าระวังใกล้ชิด</div>
+    <div class="result-desc">พบสัญญาณน่าเป็นห่วง ควรพูดคุยอย่างเปิดใจ ไม่ทิ้งให้อยู่คนเดียว<br>แจ้ง อสม. หรือ รพ.สต. ในพื้นที่</div>
+    <button class="btn-reset" onclick="resetCheck()">ประเมินใหม่</button>
+  </div>
+  <div class="result-box low" id="result-low">
+    <div class="result-icon">✅</div>
+    <div class="result-title">ความเสี่ยงต่ำ — ติดตามต่อเนื่อง</div>
+    <div class="result-desc">ยังไม่พบสัญญาณชัดเจน แต่ควรหมั่นถามไถ่และแสดงความห่วงใยเสมอ</div>
+    <button class="btn-reset" onclick="resetCheck()">ประเมินใหม่</button>
+  </div>
+</section>
+
+<!-- ===== TAB 3: แบบประเมิน 8Q ===== -->
+<section id="tab-8q" class="section">
+  <div class="sec-title">แบบประเมิน 8Q</div>
+  <div class="sec-sub">ประเมินความเสี่ยงต่อการฆ่าตัวตาย — สำหรับบุคลากรสาธารณสุข OPD/ER</div>
+
+  <div class="hotline-bar">
+    <div class="hotline-icon">ℹ️</div>
+    <div class="hotline-text">
+      <strong>วิธีใช้</strong>
+      <span>ถามผู้ป่วยในช่วง 2 สัปดาห์ที่ผ่านมา เลือกคำตอบที่ตรงที่สุด แล้วดูผลรวมคะแนน</span>
+    </div>
+  </div>
+
+  <div id="q8-form">
+    <div class="checklist" id="q8-items">
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px 18px;margin-bottom:12px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:12px;line-height:1.6;color:rgba(255,255,255,0.9);">1. ท่านมีความคิดอยากตาย หรืออยากให้ตัวเองตาย</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-0-0">
+            <input type="radio" name="q8_0" value="0" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,0,0,5)"> ไม่มี (0)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-0-1">
+            <input type="radio" name="q8_0" value="1" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,0,1,5)"> นาน ๆ ครั้ง (1)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-0-2">
+            <input type="radio" name="q8_0" value="2" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,0,2,5)"> บางครั้ง (2)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-0-3">
+            <input type="radio" name="q8_0" value="3" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,0,3,5)"> บ่อยครั้ง (3)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-0-4">
+            <input type="radio" name="q8_0" value="4" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,0,4,5)"> บ่อยมากหรือทุกวัน (4)
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px 18px;margin-bottom:12px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:12px;line-height:1.6;color:rgba(255,255,255,0.9);">2. ท่านมีความคิดอยากทำร้ายตัวเอง</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-1-0">
+            <input type="radio" name="q8_1" value="0" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,1,0,5)"> ไม่มี (0)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-1-1">
+            <input type="radio" name="q8_1" value="1" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,1,1,5)"> นาน ๆ ครั้ง (1)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-1-2">
+            <input type="radio" name="q8_1" value="2" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,1,2,5)"> บางครั้ง (2)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-1-3">
+            <input type="radio" name="q8_1" value="3" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,1,3,5)"> บ่อยครั้ง (3)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-1-4">
+            <input type="radio" name="q8_1" value="4" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,1,4,5)"> บ่อยมากหรือทุกวัน (4)
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px 18px;margin-bottom:12px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:12px;line-height:1.6;color:rgba(255,255,255,0.9);">3. ท่านมีความคิดอยากฆ่าตัวตาย</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-2-0">
+            <input type="radio" name="q8_2" value="0" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,2,0,5)"> ไม่มี (0)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-2-1">
+            <input type="radio" name="q8_2" value="1" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,2,1,5)"> นาน ๆ ครั้ง (1)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-2-2">
+            <input type="radio" name="q8_2" value="2" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,2,2,5)"> บางครั้ง (2)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-2-3">
+            <input type="radio" name="q8_2" value="3" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,2,3,5)"> บ่อยครั้ง (3)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-2-4">
+            <input type="radio" name="q8_2" value="4" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,2,4,5)"> บ่อยมากหรือทุกวัน (4)
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px 18px;margin-bottom:12px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:12px;line-height:1.6;color:rgba(255,255,255,0.9);">4. ท่านมีการวางแผนที่จะฆ่าตัวตาย</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-3-0">
+            <input type="radio" name="q8_3" value="0" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,3,0,5)"> ไม่มี (0)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-3-1">
+            <input type="radio" name="q8_3" value="1" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,3,1,5)"> นาน ๆ ครั้ง (1)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-3-2">
+            <input type="radio" name="q8_3" value="2" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,3,2,5)"> บางครั้ง (2)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-3-3">
+            <input type="radio" name="q8_3" value="3" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,3,3,5)"> บ่อยครั้ง (3)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-3-4">
+            <input type="radio" name="q8_3" value="4" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,3,4,5)"> บ่อยมากหรือทุกวัน (4)
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px 18px;margin-bottom:12px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:12px;line-height:1.6;color:rgba(255,255,255,0.9);">5. ท่านได้เตรียมการเพื่อฆ่าตัวตาย เช่น เตรียมยา เตรียมอุปกรณ์</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-4-0">
+            <input type="radio" name="q8_4" value="0" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,4,0,5)"> ไม่มี (0)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-4-1">
+            <input type="radio" name="q8_4" value="1" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,4,1,5)"> นาน ๆ ครั้ง (1)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-4-2">
+            <input type="radio" name="q8_4" value="2" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,4,2,5)"> บางครั้ง (2)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-4-3">
+            <input type="radio" name="q8_4" value="3" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,4,3,5)"> บ่อยครั้ง (3)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-4-4">
+            <input type="radio" name="q8_4" value="4" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,4,4,5)"> บ่อยมากหรือทุกวัน (4)
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px 18px;margin-bottom:12px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:12px;line-height:1.6;color:rgba(255,255,255,0.9);">6. ท่านเคยพยายามทำร้ายตัวเองหรือฆ่าตัวตายในปีที่ผ่านมา</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-5-0">
+            <input type="radio" name="q8_5" value="0" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,5,0,5)"> ไม่มี (0)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-5-1">
+            <input type="radio" name="q8_5" value="1" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,5,1,5)"> 1 ครั้ง (1)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-5-2">
+            <input type="radio" name="q8_5" value="2" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,5,2,5)"> 2 ครั้ง (2)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-5-3">
+            <input type="radio" name="q8_5" value="3" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,5,3,5)"> 3-4 ครั้ง (3)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-5-4">
+            <input type="radio" name="q8_5" value="4" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,5,4,5)"> 5 ครั้งขึ้นไป (4)
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px 18px;margin-bottom:12px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:12px;line-height:1.6;color:rgba(255,255,255,0.9);">7. ท่านรู้สึกว่าตัวเองเป็นภาระของผู้อื่น</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-6-0">
+            <input type="radio" name="q8_6" value="0" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,6,0,5)"> ไม่มี (0)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-6-1">
+            <input type="radio" name="q8_6" value="1" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,6,1,5)"> นาน ๆ ครั้ง (1)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-6-2">
+            <input type="radio" name="q8_6" value="2" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,6,2,5)"> บางครั้ง (2)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-6-3">
+            <input type="radio" name="q8_6" value="3" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,6,3,5)"> บ่อยครั้ง (3)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-6-4">
+            <input type="radio" name="q8_6" value="4" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,6,4,5)"> บ่อยมากหรือทุกวัน (4)
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px 18px;margin-bottom:12px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:12px;line-height:1.6;color:rgba(255,255,255,0.9);">8. ท่านรู้สึกสิ้นหวัง ไม่เห็นทางออก</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-7-0">
+            <input type="radio" name="q8_7" value="0" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,7,0,5)"> ไม่มี (0)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-7-1">
+            <input type="radio" name="q8_7" value="1" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,7,1,5)"> นาน ๆ ครั้ง (1)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-7-2">
+            <input type="radio" name="q8_7" value="2" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,7,2,5)"> บางครั้ง (2)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-7-3">
+            <input type="radio" name="q8_7" value="3" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,7,3,5)"> บ่อยครั้ง (3)
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-7-4">
+            <input type="radio" name="q8_7" value="4" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt(&#39;q8&#39;,7,4,5)"> บ่อยมากหรือทุกวัน (4)
+          </label>
+      </div>
+    </div></div>
+    <div style="margin-top:18px; text-align:right;">
+      <button class="btn-reset" style="background:var(--teal);border-color:var(--teal);padding:11px 28px;font-size:15px;font-weight:700;" onclick="calc8Q()">คำนวณผล 8Q →</button>
+    </div>
+  </div>
+
+  <div class="result-box" id="result-8q" style="display:none; margin-top:16px;">
+    <div class="result-icon" id="r8q-icon"></div>
+    <div class="result-title" id="r8q-title"></div>
+    <div style="font-family:&#39;Kanit&#39;,sans-serif; font-size:28px; font-weight:800; margin:8px 0;" id="r8q-score"></div>
+    <div class="result-desc" id="r8q-desc"></div>
+    <div id="r8q-action" style="margin-top:12px; font-size:14px; line-height:1.8; color:rgba(255,255,255,0.85);"></div>
+    <button class="btn-reset" onclick="reset8Q()" style="margin-top:14px;">ประเมินใหม่</button>
+  </div>
+</section>
+
+<!-- ===== TAB 4: แบบประเมิน 9Q ===== -->
+<section id="tab-9q" class="section">
+  <div class="sec-title">แบบประเมิน 9Q (PHQ-9)</div>
+  <div class="sec-sub">ประเมินภาวะซึมเศร้า — สำหรับบุคลากรสาธารณสุขและผู้ที่ต้องการประเมินตนเอง</div>
+
+  <div class="hotline-bar">
+    <div class="hotline-icon">ℹ️</div>
+    <div class="hotline-text">
+      <strong>วิธีใช้</strong>
+      <span>ในช่วง 2 สัปดาห์ที่ผ่านมา มีอาการเหล่านี้บ่อยแค่ไหน?</span>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:6px; margin-bottom:16px; text-align:center;">
+    <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px;font-size:12px;color:rgba(255,255,255,0.6);">0<br><span style="font-size:11px;">ไม่มีเลย</span></div>
+    <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px;font-size:12px;color:rgba(255,255,255,0.6);">1<br><span style="font-size:11px;">บางวัน<br>(1-7 วัน)</span></div>
+    <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px;font-size:12px;color:rgba(255,255,255,0.6);">2<br><span style="font-size:11px;">บ่อยครั้ง<br>(8-12 วัน)</span></div>
+    <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px;font-size:12px;color:rgba(255,255,255,0.6);">3<br><span style="font-size:11px;">แทบทุกวัน<br>(13-14 วัน)</span></div>
+  </div>
+
+  <div id="q9-items">
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:10px;line-height:1.6;color:rgba(255,255,255,0.9);">1. เบื่อ ทำอะไรก็ไม่เพลิดเพลิน</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+        
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-0-0">
+            <input type="radio" name="q9_0" value="0" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,0,0,4)">
+            <span style="font-weight:700;font-size:16px;">0</span>
+            <span>ไม่มีเลย</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-0-1">
+            <input type="radio" name="q9_0" value="1" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,0,1,4)">
+            <span style="font-weight:700;font-size:16px;">1</span>
+            <span>บางวัน</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-0-2">
+            <input type="radio" name="q9_0" value="2" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,0,2,4)">
+            <span style="font-weight:700;font-size:16px;">2</span>
+            <span>บ่อยครั้ง</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-0-3">
+            <input type="radio" name="q9_0" value="3" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,0,3,4)">
+            <span style="font-weight:700;font-size:16px;">3</span>
+            <span>แทบทุกวัน</span>
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:10px;line-height:1.6;color:rgba(255,255,255,0.9);">2. รู้สึกหดหู่ เศร้า หรือสิ้นหวัง</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+        
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-1-0">
+            <input type="radio" name="q9_1" value="0" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,1,0,4)">
+            <span style="font-weight:700;font-size:16px;">0</span>
+            <span>ไม่มีเลย</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-1-1">
+            <input type="radio" name="q9_1" value="1" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,1,1,4)">
+            <span style="font-weight:700;font-size:16px;">1</span>
+            <span>บางวัน</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-1-2">
+            <input type="radio" name="q9_1" value="2" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,1,2,4)">
+            <span style="font-weight:700;font-size:16px;">2</span>
+            <span>บ่อยครั้ง</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-1-3">
+            <input type="radio" name="q9_1" value="3" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,1,3,4)">
+            <span style="font-weight:700;font-size:16px;">3</span>
+            <span>แทบทุกวัน</span>
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:10px;line-height:1.6;color:rgba(255,255,255,0.9);">3. นอนหลับยาก หรือนอนหลับมากเกินไป</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+        
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-2-0">
+            <input type="radio" name="q9_2" value="0" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,2,0,4)">
+            <span style="font-weight:700;font-size:16px;">0</span>
+            <span>ไม่มีเลย</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-2-1">
+            <input type="radio" name="q9_2" value="1" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,2,1,4)">
+            <span style="font-weight:700;font-size:16px;">1</span>
+            <span>บางวัน</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-2-2">
+            <input type="radio" name="q9_2" value="2" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,2,2,4)">
+            <span style="font-weight:700;font-size:16px;">2</span>
+            <span>บ่อยครั้ง</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-2-3">
+            <input type="radio" name="q9_2" value="3" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,2,3,4)">
+            <span style="font-weight:700;font-size:16px;">3</span>
+            <span>แทบทุกวัน</span>
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:10px;line-height:1.6;color:rgba(255,255,255,0.9);">4. รู้สึกเหนื่อยง่าย หรือไม่ค่อยมีแรง</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+        
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-3-0">
+            <input type="radio" name="q9_3" value="0" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,3,0,4)">
+            <span style="font-weight:700;font-size:16px;">0</span>
+            <span>ไม่มีเลย</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-3-1">
+            <input type="radio" name="q9_3" value="1" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,3,1,4)">
+            <span style="font-weight:700;font-size:16px;">1</span>
+            <span>บางวัน</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-3-2">
+            <input type="radio" name="q9_3" value="2" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,3,2,4)">
+            <span style="font-weight:700;font-size:16px;">2</span>
+            <span>บ่อยครั้ง</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-3-3">
+            <input type="radio" name="q9_3" value="3" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,3,3,4)">
+            <span style="font-weight:700;font-size:16px;">3</span>
+            <span>แทบทุกวัน</span>
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:10px;line-height:1.6;color:rgba(255,255,255,0.9);">5. เบื่ออาหาร หรือกินมากเกินไป</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+        
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-4-0">
+            <input type="radio" name="q9_4" value="0" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,4,0,4)">
+            <span style="font-weight:700;font-size:16px;">0</span>
+            <span>ไม่มีเลย</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-4-1">
+            <input type="radio" name="q9_4" value="1" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,4,1,4)">
+            <span style="font-weight:700;font-size:16px;">1</span>
+            <span>บางวัน</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-4-2">
+            <input type="radio" name="q9_4" value="2" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,4,2,4)">
+            <span style="font-weight:700;font-size:16px;">2</span>
+            <span>บ่อยครั้ง</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-4-3">
+            <input type="radio" name="q9_4" value="3" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,4,3,4)">
+            <span style="font-weight:700;font-size:16px;">3</span>
+            <span>แทบทุกวัน</span>
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:10px;line-height:1.6;color:rgba(255,255,255,0.9);">6. รู้สึกแย่กับตัวเอง รู้สึกว่าตัวเองล้มเหลว หรือทำให้ครอบครัวผิดหวัง</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+        
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-5-0">
+            <input type="radio" name="q9_5" value="0" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,5,0,4)">
+            <span style="font-weight:700;font-size:16px;">0</span>
+            <span>ไม่มีเลย</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-5-1">
+            <input type="radio" name="q9_5" value="1" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,5,1,4)">
+            <span style="font-weight:700;font-size:16px;">1</span>
+            <span>บางวัน</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-5-2">
+            <input type="radio" name="q9_5" value="2" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,5,2,4)">
+            <span style="font-weight:700;font-size:16px;">2</span>
+            <span>บ่อยครั้ง</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-5-3">
+            <input type="radio" name="q9_5" value="3" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,5,3,4)">
+            <span style="font-weight:700;font-size:16px;">3</span>
+            <span>แทบทุกวัน</span>
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:10px;line-height:1.6;color:rgba(255,255,255,0.9);">7. มีสมาธิในการทำสิ่งต่าง ๆ ยากขึ้น เช่น อ่านหนังสือพิมพ์หรือดูโทรทัศน์</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+        
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-6-0">
+            <input type="radio" name="q9_6" value="0" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,6,0,4)">
+            <span style="font-weight:700;font-size:16px;">0</span>
+            <span>ไม่มีเลย</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-6-1">
+            <input type="radio" name="q9_6" value="1" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,6,1,4)">
+            <span style="font-weight:700;font-size:16px;">1</span>
+            <span>บางวัน</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-6-2">
+            <input type="radio" name="q9_6" value="2" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,6,2,4)">
+            <span style="font-weight:700;font-size:16px;">2</span>
+            <span>บ่อยครั้ง</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-6-3">
+            <input type="radio" name="q9_6" value="3" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,6,3,4)">
+            <span style="font-weight:700;font-size:16px;">3</span>
+            <span>แทบทุกวัน</span>
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:10px;line-height:1.6;color:rgba(255,255,255,0.9);">8. พูดหรือทำอะไรช้าลงจนคนอื่นสังเกตเห็นได้ หรือกระสับกระส่าย อยู่ไม่นิ่งมากกว่าปกติ</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+        
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-7-0">
+            <input type="radio" name="q9_7" value="0" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,7,0,4)">
+            <span style="font-weight:700;font-size:16px;">0</span>
+            <span>ไม่มีเลย</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-7-1">
+            <input type="radio" name="q9_7" value="1" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,7,1,4)">
+            <span style="font-weight:700;font-size:16px;">1</span>
+            <span>บางวัน</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-7-2">
+            <input type="radio" name="q9_7" value="2" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,7,2,4)">
+            <span style="font-weight:700;font-size:16px;">2</span>
+            <span>บ่อยครั้ง</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-7-3">
+            <input type="radio" name="q9_7" value="3" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,7,3,4)">
+            <span style="font-weight:700;font-size:16px;">3</span>
+            <span>แทบทุกวัน</span>
+          </label>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(229,62,62,0.3);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:10px;line-height:1.6;color:#fc8181;">9. มีความคิดทำร้ายตัวเองหรืออยากตาย ★ <span style="font-size:11px;background:rgba(229,62,62,0.2);padding:2px 8px;border-radius:10px;color:#fc8181;margin-left:6px;">ข้อสำคัญ</span></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+        
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-8-0">
+            <input type="radio" name="q9_8" value="0" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,8,0,4)">
+            <span style="font-weight:700;font-size:16px;">0</span>
+            <span>ไม่มีเลย</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-8-1">
+            <input type="radio" name="q9_8" value="1" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,8,1,4)">
+            <span style="font-weight:700;font-size:16px;">1</span>
+            <span>บางวัน</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-8-2">
+            <input type="radio" name="q9_8" value="2" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,8,2,4)">
+            <span style="font-weight:700;font-size:16px;">2</span>
+            <span>บ่อยครั้ง</span>
+          </label>
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-8-3">
+            <input type="radio" name="q9_8" value="3" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt(&#39;q9&#39;,8,3,4)">
+            <span style="font-weight:700;font-size:16px;">3</span>
+            <span>แทบทุกวัน</span>
+          </label>
+      </div>
+    </div></div>
+  <div style="margin-top:18px; text-align:right;">
+    <button class="btn-reset" style="background:var(--teal);border-color:var(--teal);padding:11px 28px;font-size:15px;font-weight:700;" onclick="calc9Q()">คำนวณผล 9Q →</button>
+  </div>
+
+  <div class="result-box" id="result-9q" style="display:none; margin-top:16px;">
+    <div class="result-icon" id="r9q-icon"></div>
+    <div class="result-title" id="r9q-title"></div>
+    <div style="font-family:&#39;Kanit&#39;,sans-serif; font-size:28px; font-weight:800; margin:8px 0;" id="r9q-score"></div>
+    <div class="result-desc" id="r9q-desc"></div>
+    <div id="r9q-action" style="margin-top:12px; font-size:14px; line-height:1.8; color:rgba(255,255,255,0.85);"></div>
+    <button class="btn-reset" onclick="reset9Q()" style="margin-top:14px;">ประเมินใหม่</button>
+  </div>
+</section>
+
+
+<section id="tab-flow" class="section">
+  <div class="sec-title">ขั้นตอนการช่วยเหลือ</div>
+  <div class="sec-sub">เมื่อพบสัญญาณเตือน ทำตามขั้นตอนนี้ได้ทันที</div>
+
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div class="flow-content">
+        <strong>🧘 อยู่เป็นเพื่อน — อย่าทิ้งให้อยู่คนเดียว</strong>
+        <p>นั่งอยู่ด้วย ฟังโดยไม่ตัดสิน พูดว่า "ฉันเป็นห่วงคุณนะ" "คุณสำคัญกับฉัน" ไม่ต้องรีบหาคำตอบ</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div class="flow-content">
+        <strong>🗣️ ถามตรงๆ ด้วยความห่วงใย</strong>
+        <p>ถามว่า "คุณมีความคิดอยากทำร้ายตัวเองไหม?" การถามตรงๆ ไม่ทำให้เกิดความคิดนั้น แต่ช่วยเปิดใจ</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div class="flow-content">
+        <strong>🔒 เก็บสิ่งของที่เป็นอันตราย</strong>
+        <p>หากมีโอกาส ให้นำยาสะสม เชือก มีด ยาฆ่าหญ้า ออกจากบริเวณที่เข้าถึงง่ายโดยเร็ว</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">4</div>
+      <div class="flow-content">
+        <strong>📞 โทรแจ้งและส่งต่อทันที</strong>
+        <p>โทร <strong style="color:var(--teal2)">1323</strong> สายด่วนสุขภาพจิต หรือโทรหา อสม. / รพ.สต. ในพื้นที่ หรือพาไป รพ.นาด้วง</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">5</div>
+      <div class="flow-content">
+        <strong>🏥 นำส่งโรงพยาบาล หากเสี่ยงสูง</strong>
+        <p>ถ้าพบอุปกรณ์หรือมีพฤติกรรมฉุกเฉิน นำส่ง รพ.นาด้วง ทันที หรือโทร 1669 รถพยาบาลฉุกเฉิน</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">6</div>
+      <div class="flow-content">
+        <strong>📝 บันทึกและรายงาน</strong>
+        <p>บันทึกชื่อ วันที่ พฤติกรรมที่พบ แจ้งพยาบาลจิตเวช รพ.นาด้วง เพื่อติดตามดูแลต่อเนื่อง</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px; background:rgba(229,62,62,0.1); border:1px solid rgba(229,62,62,0.3); border-radius:14px; padding:16px 20px;">
+    <div style="font-weight:700; color:#fc8181; margin-bottom:8px; font-size:15px;">⚠️ สิ่งที่ไม่ควรทำ</div>
+    <ul style="padding-left:18px; color:rgba(255,255,255,0.7); font-size:13px; line-height:2;">
+      <li>อย่าท้าทาย เช่น "ถ้าอยากตายก็ตายไปสิ"</li>
+      <li>อย่าบอกว่า "แค่นี้ก็ทนไม่ได้แล้ว" หรือ "คิดมากเอง"</li>
+      <li>อย่าปล่อยให้อยู่คนเดียวหากเสี่ยงสูง</li>
+      <li>อย่าสัญญาว่าจะเก็บเป็นความลับ</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== TAB 4: เกี่ยวกับนวัตกรรม ===== -->
+<section id="tab-about" class="section">
+  <div class="sec-title">เกี่ยวกับนวัตกรรม "นาด้วงใจดี"</div>
+  <div class="sec-sub">สื่อดิจิทัลเพื่อการเฝ้าระวังและป้องกันการฆ่าตัวตายในชุมชน</div>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap:12px; margin-bottom:20px;">
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <div class="card-title">ปัญหาที่แก้</div>
+      <div class="card-desc">อัตราฆ่าตัวตายใน อ.นาด้วง สูงถึง 26.6 ต่อแสนประชากร (ปี 2568) สูงกว่าเป้าหมายชาติ 3.4 เท่า</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">💡</div>
+      <div class="card-title">แนวคิด</div>
+      <div class="card-desc">เปลี่ยนสื่อความรู้จากกระดาษเป็นดิจิทัล เข้าถึงง่าย ใช้ได้ทันทีบนมือถือ ไม่ต้องลงแอปพลิเคชัน</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">👥</div>
+      <div class="card-title">กลุ่มเป้าหมาย</div>
+      <div class="card-desc">บุคลากร รพ., อสม. 5 ตำบล, ครอบครัวผู้เสี่ยง และประชาชนทั่วไปในพื้นที่รับผิดชอบ</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <div class="card-title">วิธีใช้งาน</div>
+      <div class="card-desc">บันทึกเป็น Bookmark บนมือถือ หรือแชร์ผ่าน LINE กลุ่ม อสม. / ครอบครัว ไม่ต้องเสียค่าใช้จ่าย</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <div class="card-title">ตัวชี้วัดสำเร็จ</div>
+      <div class="card-desc">อสม. และบุคลากรใช้ได้ถูกต้อง ≥80%, ผู้เสี่ยงถูกส่งต่อทันเวลา ≥90%, พัฒนาต่อยอดได้</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔗</div>
+      <div class="card-title">บูรณาการกับระบบ</div>
+      <div class="card-desc">เชื่อมโยงกับ SMIV-CARE, ระบบติดตาม 506s และทะเบียนผู้เสี่ยงใน HOSxP ของ รพ.นาด้วง</div>
+    </div>
+  </div>
+
+  <div style="background:rgba(13,158,138,0.1); border:1px solid rgba(13,158,138,0.3); border-radius:14px; padding:18px 20px;">
+    <div style="font-weight:700; color:var(--teal2); font-size:15px; margin-bottom:10px;">📌 ผู้พัฒนา</div>
+    <p style="font-size:14px; color:rgba(255,255,255,0.7); line-height:1.8; margin:0;">
+      กลุ่มงานจิตเวชและยาเสพติด โรงพยาบาลนาด้วง<br>
+      อำเภอนาด้วง จังหวัดเลย เขตสุขภาพที่ 8<br>
+      ภายใต้การนำของ นพ.ศราวุธ ศรีบุรินทร์ ผู้อำนวยการโรงพยาบาลนาด้วง<br>
+      <span style="color:rgba(255,255,255,0.4);">ปีงบประมาณ 2569</span>
+    </p>
+  </div>
+</section>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-box">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<footer>
+  นาด้วงใจดี · โรงพยาบาลนาด้วง · สายด่วนสุขภาพจิต 1323 · โทรฉุกเฉิน 1669
+</footer>
+
+<script>
+const modals = {
+  m1: {
+    title: '😡 พูดหรือเขียนอำลา',
+    level: 'level-red', levelText: '🔴 ด่วนมาก',
+    desc: 'สัญญาณนี้ถือเป็นวิกฤต ผู้ที่พูดว่า "ขอลาทุกคน" "ไม่อยากอยู่แล้ว" หรือโพสต์ข้อความบอกลา มักมีแผนชัดเจนแล้ว',
+    signs: ['พูดว่า "ขอโทษที่เป็นภาระ" หรือ "พวกแกดีกว่านี้ถ้าฉันหายไป"', 'โพสต์ Social Media ลาคนรอบข้าง', 'แจกสิ่งของมีค่าให้คนอื่น', 'เขียนจดหมายลา'],
+    actions: ['อยู่กับเขาตลอดเวลา อย่าทิ้งให้อยู่คนเดียว', 'โทร 1323 หรือพาไป รพ.นาด้วง ทันที', 'แจ้งญาติใกล้ชิดและ อสม. ในพื้นที่']
+  },
+  m2: {
+    title: '🔪 เตรียมอุปกรณ์ทำร้ายตัวเอง',
+    level: 'level-red', levelText: '🔴 ด่วนมาก',
+    desc: 'การสะสมหรือเตรียมอุปกรณ์แสดงว่ามีแผนการชัดเจน ยิ่งมีวิธีเฉพาะเจาะจงยิ่งอันตราย',
+    signs: ['สะสมยาที่บ้านเกินจำเป็น', 'หาซื้อเชือก มีด หรือยาฆ่าหญ้า', 'ค้นหาข้อมูลวิธีทำร้ายตัวเองออนไลน์'],
+    actions: ['เก็บสิ่งของอันตรายออกจากบ้านทันที', 'โทร 1323 หรือพาไป รพ.นาด้วง ด่วน', 'แจ้งญาติ อสม. และพยาบาลจิตเวช รพ.นาด้วง']
+  },
+  m3: {
+    title: '😶 สงบผิดปกติหลังซึมเศร้า',
+    level: 'level-red', levelText: '🔴 ด่วนมาก',
+    desc: '"การสงบหลังพายุ" — หลังจากซึมเศร้ามานานแล้วดูดีขึ้นอย่างฉับพลัน อาจหมายความว่าตัดสินใจแล้วและรู้สึกโล่งใจ',
+    signs: ['ซึมเศร้ามานานแล้วดูร่าเริงขึ้นผิดปกติ', 'บอกว่า "ตัดสินใจได้แล้ว" โดยไม่บอกรายละเอียด', 'ดูสงบและไม่วิตกกังวลแล้ว'],
+    actions: ['ถามตรงๆ ว่า "คุณกำลังคิดจะทำร้ายตัวเองอยู่ไหม?"', 'อยู่เป็นเพื่อน ไม่ทิ้งให้อยู่คนเดียว', 'โทร 1323 หรือพาพบแพทย์ด่วน']
+  },
+  m4: {
+    title: '🗣️ พูดถึงการตายบ่อยๆ',
+    level: 'level-orange', levelText: '🟡 เฝ้าระวัง',
+    desc: 'การพูดถึงการตายหรืออยากหายไปเป็นสัญญาณที่ต้องใส่ใจ แม้จะพูดแบบล้อเล่น',
+    signs: ['พูดว่า "ฉันไม่อยากอยู่แล้ว" "เบื่อชีวิตจริงๆ"', 'โพสต์ข้อความเกี่ยวกับความตายบ่อยๆ', 'ถามถึงวิธีการตาย หรือพูดว่าอยากหลับไม่ตื่น'],
+    actions: ['ถามตรงๆ ว่ารู้สึกอยากทำร้ายตัวเองไหม', 'ฟังโดยไม่ตัดสิน แสดงความห่วงใย', 'แจ้ง อสม. หรือพยาบาลจิตเวช รพ.นาด้วง']
+  },
+  m5: {
+    title: '🚪 แยกตัว หนีสังคม',
+    level: 'level-orange', levelText: '🟡 เฝ้าระวัง',
+    desc: 'การถอนตัวจากสังคมและครอบครัวเป็นสัญญาณสำคัญ โดยเฉพาะเมื่อเกิดขึ้นพร้อมกับอาการอื่น',
+    signs: ['ไม่ออกจากห้องหลายวัน', 'ไม่รับโทรศัพท์จากครอบครัวและเพื่อน', 'ลาออกจากงาน/หยุดเรียนโดยไม่มีเหตุผล'],
+    actions: ['เยี่ยมบ้านและพูดคุยอย่างจริงใจ', 'ประสานญาติและ อสม. ในพื้นที่', 'หากมีปัจจัยเสี่ยงอื่นร่วมด้วย ส่งต่อ รพ.นาด้วง']
+  },
+  m6: {
+    title: '😔 รู้สึกไร้ค่า สิ้นหวัง',
+    level: 'level-orange', levelText: '🟡 เฝ้าระวัง',
+    desc: 'ความรู้สึกสิ้นหวังและไร้ค่าเป็นหนึ่งในปัจจัยเสี่ยงที่แข็งแกร่งที่สุด โดยเฉพาะเมื่อคิดว่าตัวเองเป็นภาระ',
+    signs: ['"ฉันไม่มีประโยชน์กับใคร"', '"ทุกอย่างมันไม่มีทางดีขึ้น"', '"ทุกคนจะโล่งใจถ้าฉันหายไป"'],
+    actions: ['แสดงความห่วงใยและคุณค่าที่เขามีต่อครอบครัว', 'ช่วยแก้ปัญหาเฉพาะหน้าที่ทำให้เครียด', 'ส่งพบพยาบาลจิตเวชหรือนักจิตวิทยา รพ.นาด้วง']
+  },
+  m7: {
+    title: '🍺 ดื่มเหล้า/ยาเสพติดเพิ่มขึ้น',
+    level: 'level-green', levelText: '🟢 สังเกต',
+    desc: 'การดื่มเหล้าและใช้ยาเพิ่มขึ้นมักเป็นการพยายามหนีจากความเจ็บปวดทางใจ และยังเพิ่มความเสี่ยงด้วย',
+    signs: ['ดื่มเหล้ามากขึ้นและบ่อยขึ้น', 'ใช้ยาหรือสารเสพติดเพิ่มขึ้น', 'พูดว่า "กินเหล้าแล้วลืมเรื่องแย่ๆ ได้"'],
+    actions: ['พูดคุยเรื่องสาเหตุที่ทำให้เครียด', 'ส่งพบกลุ่มงานจิตเวชยาเสพติด รพ.นาด้วง', 'ติดตามดูแลสม่ำเสมอ']
+  },
+  m8: {
+    title: '💸 วิกฤตชีวิต / หนี้สิน',
+    level: 'level-green', levelText: '🟢 สังเกต',
+    desc: 'ข้อมูลจาก รพ.นาด้วง พบว่าวิกฤตชีวิตและหนี้สินเป็นปัจจัยกระตุ้นการฆ่าตัวตายที่พบบ่อยที่สุดในพื้นที่',
+    signs: ['มีปัญหาหนี้สินรุนแรงและหาทางออกไม่ได้', 'หย่าร้าง หรือสูญเสียคนที่รัก', 'ตกงานหรือสูญเสียรายได้หลัก'],
+    actions: ['ฟังและช่วยคิดหาทางออกเฉพาะหน้า', 'ประสานหน่วยงานช่วยเหลือที่เหมาะสม', 'ติดตามอาการจิตใจควบคู่กันไป']
+  },
+  m9: {
+    title: '😴 นอนไม่หลับ / พฤติกรรมเปลี่ยน',
+    level: 'level-green', levelText: '🟢 สังเกต',
+    desc: 'การนอนไม่หลับเรื้อรังและพฤติกรรมที่เปลี่ยนแปลงอย่างชัดเจนอาจเป็นสัญญาณของภาวะซึมเศร้าหรือความเครียดสะสม',
+    signs: ['นอนไม่หลับติดต่อกันหลายสัปดาห์', 'กินน้อยลงมาก น้ำหนักลดผิดปกติ', 'พฤติกรรมเปลี่ยนจากเดิมอย่างชัดเจน'],
+    actions: ['แนะนำพบแพทย์เพื่อรับการรักษา', 'ประเมินด้วยแบบ PHQ-9 หรือ 9Q', 'หากสูง ส่งต่อพยาบาลจิตเวช รพ.นาด้วง']
+  }
+};
+
+function openModal(id) {
+  const d = modals[id];
+  document.getElementById('modal-content').innerHTML = `
+    <span class="level-badge ${d.level}" style="margin-bottom:10px;display:inline-block;">${d.levelText}</span>
+    <h3>${d.title}</h3>
+    <p style="margin-top:8px;">${d.desc}</p>
+    <p style="font-weight:700; color:var(--teal2); margin-bottom:4px; margin-top:8px;">สัญญาณที่อาจพบ:</p>
+    <ul>${d.signs.map(s=>`<li>${s}</li>`).join('')}</ul>
+    <div class="action-box">
+      <div class="action-title">✅ วิธีช่วยเหลือ</div>
+      <ul>${d.actions.map(a=>`<li>${a}</li>`).join('')}</ul>
+    </div>`;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modal-overlay'))
+    document.getElementById('modal-overlay').classList.remove('open');
+}
+function closeModalDirect() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+  const count = document.querySelectorAll('.check-item.checked').length;
+  document.getElementById('checkCount').textContent = count;
+  document.getElementById('result-high').classList.remove('show');
+  document.getElementById('result-mid').classList.remove('show');
+  document.getElementById('result-low').classList.remove('show');
+  if (count >= 4) document.getElementById('result-high').classList.add('show');
+  else if (count >= 2) document.getElementById('result-mid').classList.add('show');
+  else if (count >= 0 && document.querySelectorAll('.check-item.checked').length > 0)
+    document.getElementById('result-low').classList.add('show');
+}
+
+function resetCheck() {
+  document.querySelectorAll('.check-item').forEach(i => i.classList.remove('checked'));
+  document.getElementById('checkCount').textContent = '0';
+  document.getElementById('result-high').classList.remove('show');
+  document.getElementById('result-mid').classList.remove('show');
+  document.getElementById('result-low').classList.remove('show');
+}
+
+// ===== 8Q =====
+const q8Items = [
+  { q: "1. ท่านมีความคิดอยากตาย หรืออยากให้ตัวเองตาย", opts: ["ไม่มี (0)", "นาน ๆ ครั้ง (1)", "บางครั้ง (2)", "บ่อยครั้ง (3)", "บ่อยมากหรือทุกวัน (4)"] },
+  { q: "2. ท่านมีความคิดอยากทำร้ายตัวเอง", opts: ["ไม่มี (0)", "นาน ๆ ครั้ง (1)", "บางครั้ง (2)", "บ่อยครั้ง (3)", "บ่อยมากหรือทุกวัน (4)"] },
+  { q: "3. ท่านมีความคิดอยากฆ่าตัวตาย", opts: ["ไม่มี (0)", "นาน ๆ ครั้ง (1)", "บางครั้ง (2)", "บ่อยครั้ง (3)", "บ่อยมากหรือทุกวัน (4)"] },
+  { q: "4. ท่านมีการวางแผนที่จะฆ่าตัวตาย", opts: ["ไม่มี (0)", "นาน ๆ ครั้ง (1)", "บางครั้ง (2)", "บ่อยครั้ง (3)", "บ่อยมากหรือทุกวัน (4)"] },
+  { q: "5. ท่านได้เตรียมการเพื่อฆ่าตัวตาย เช่น เตรียมยา เตรียมอุปกรณ์", opts: ["ไม่มี (0)", "นาน ๆ ครั้ง (1)", "บางครั้ง (2)", "บ่อยครั้ง (3)", "บ่อยมากหรือทุกวัน (4)"] },
+  { q: "6. ท่านเคยพยายามทำร้ายตัวเองหรือฆ่าตัวตายในปีที่ผ่านมา", opts: ["ไม่มี (0)", "1 ครั้ง (1)", "2 ครั้ง (2)", "3-4 ครั้ง (3)", "5 ครั้งขึ้นไป (4)"] },
+  { q: "7. ท่านรู้สึกว่าตัวเองเป็นภาระของผู้อื่น", opts: ["ไม่มี (0)", "นาน ๆ ครั้ง (1)", "บางครั้ง (2)", "บ่อยครั้ง (3)", "บ่อยมากหรือทุกวัน (4)"] },
+  { q: "8. ท่านรู้สึกสิ้นหวัง ไม่เห็นทางออก", opts: ["ไม่มี (0)", "นาน ๆ ครั้ง (1)", "บางครั้ง (2)", "บ่อยครั้ง (3)", "บ่อยมากหรือทุกวัน (4)"] },
+];
+const q8Actions = [
+  { range:[0,0],   cls:"low",  icon:"✅", title:"ไม่พบความเสี่ยง",           desc:"ไม่พบความคิดหรือแผนการฆ่าตัวตาย",                   action:"ติดตามดูแลตามปกติ แนะนำการดูแลสุขภาพจิตเบื้องต้น" },
+  { range:[1,8],   cls:"low",  icon:"🟢", title:"ความเสี่ยงต่ำ",             desc:"มีความคิดบ้าง แต่ยังไม่มีแผนชัดเจน",               action:"ให้คำปรึกษาเบื้องต้น นัดติดตาม ประเมินซ้ำใน 2 สัปดาห์" },
+  { range:[9,16],  cls:"mid",  icon:"⚠️", title:"ความเสี่ยงปานกลาง",        desc:"มีความคิดและสัญญาณที่น่าเป็นห่วง",                  action:"ส่งพบแพทย์/พยาบาลจิตเวช รพ.นาด้วง ภายใน 48-72 ชม. แจ้งครอบครัว" },
+  { range:[17,24], cls:"high", icon:"🚨", title:"ความเสี่ยงสูง — ต้องการการดูแลด่วน", desc:"มีแผนและการเตรียมการ ต้องได้รับการช่วยเหลือทันที", action:"ส่งพบแพทย์ทันที ไม่ปล่อยให้อยู่คนเดียว เก็บสิ่งของอันตราย โทร 1323" },
+  { range:[25,32], cls:"high", icon:"🔴", title:"ความเสี่ยงสูงมาก — วิกฤต!", desc:"คะแนนสูงมาก มีความเสี่ยงสูงต่อการฆ่าตัวตายในเวลาอันใกล้", action:"Admit/ดูแลอย่างใกล้ชิดในโรงพยาบาลทันที โทร 1323 หรือ 1669" },
+];
+
+function render8Q() {
+  const el = document.getElementById('q8-items');
+  if (!el) return;
+  el.innerHTML = q8Items.map((item,i) => `
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px 18px;margin-bottom:12px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:12px;line-height:1.6;color:rgba(255,255,255,0.9);">${item.q}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        ${item.opts.map((opt,j) => `
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 12px;border-radius:30px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:13px;color:rgba(255,255,255,0.7);" id="q8-lbl-${i}-${j}">
+            <input type="radio" name="q8_${i}" value="${j}" style="accent-color:var(--teal);width:15px;height:15px;" onchange="highlightOpt('q8',${i},${j},${item.opts.length})"> ${opt}
+          </label>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+function highlightOpt(prefix, q, sel, total) {
+  for (let j = 0; j < total; j++) {
+    const lbl = document.getElementById(`${prefix}-lbl-${q}-${j}`);
+    if (!lbl) continue;
+    lbl.style.borderColor = j===sel ? 'var(--teal)' : 'rgba(255,255,255,0.1)';
+    lbl.style.background  = j===sel ? 'rgba(13,158,138,0.15)' : 'rgba(255,255,255,0.03)';
+    lbl.style.color       = j===sel ? 'white' : 'rgba(255,255,255,0.7)';
+  }
+}
+
+function calc8Q() {
+  let score = 0, missing = 0;
+  q8Items.forEach((_,i) => {
+    const sel = document.querySelector(`input[name="q8_${i}"]:checked`);
+    if (sel) score += parseInt(sel.value); else missing++;
+  });
+  if (missing > 0) { alert(`กรุณาตอบให้ครบทุกข้อ (ยังไม่ได้ตอบ ${missing} ข้อ)`); return; }
+  const r = q8Actions.find(a => score >= a.range[0] && score <= a.range[1]) || q8Actions[q8Actions.length-1];
+  const box = document.getElementById('result-8q');
+  box.className = `result-box ${r.cls} show`;
+  box.style.display = 'block';
+  document.getElementById('r8q-icon').textContent  = r.icon;
+  document.getElementById('r8q-title').textContent = r.title;
+  document.getElementById('r8q-score').textContent = `คะแนน 8Q: ${score} / 32`;
+  document.getElementById('r8q-desc').textContent  = r.desc;
+  document.getElementById('r8q-action').innerHTML  = `<div style="background:rgba(255,255,255,0.06);border-radius:10px;padding:12px 14px;margin-top:8px;"><strong style="color:var(--teal2);">แนวทางดำเนินการ:</strong><br>${r.action}</div>`;
+  box.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+function reset8Q() {
+  document.querySelectorAll('input[name^="q8_"]').forEach(r => r.checked = false);
+  q8Items.forEach((_,i) => { for(let j=0;j<5;j++){ const l=document.getElementById(`q8-lbl-${i}-${j}`); if(l){l.style.borderColor='rgba(255,255,255,0.1)';l.style.background='rgba(255,255,255,0.03)';l.style.color='rgba(255,255,255,0.7)';}}});
+  const box = document.getElementById('result-8q');
+  box.style.display = 'none'; box.className = 'result-box';
+}
+
+// ===== 9Q =====
+const q9Items = [
+  "1. เบื่อ ทำอะไรก็ไม่เพลิดเพลิน",
+  "2. รู้สึกหดหู่ เศร้า หรือสิ้นหวัง",
+  "3. นอนหลับยาก หรือนอนหลับมากเกินไป",
+  "4. รู้สึกเหนื่อยง่าย หรือไม่ค่อยมีแรง",
+  "5. เบื่ออาหาร หรือกินมากเกินไป",
+  "6. รู้สึกแย่กับตัวเอง รู้สึกว่าตัวเองล้มเหลว หรือทำให้ครอบครัวผิดหวัง",
+  "7. มีสมาธิในการทำสิ่งต่าง ๆ ยากขึ้น เช่น อ่านหนังสือพิมพ์หรือดูโทรทัศน์",
+  "8. พูดหรือทำอะไรช้าลงจนคนอื่นสังเกตเห็นได้ หรือกระสับกระส่าย อยู่ไม่นิ่งมากกว่าปกติ",
+  "9. มีความคิดทำร้ายตัวเองหรืออยากตาย ★",
+];
+const q9Results = [
+  { range:[0,6],   cls:"low",  icon:"✅", title:"ไม่มีหรือมีน้อยมาก",      desc:"ไม่พบภาวะซึมเศร้า หรือมีอาการน้อยมาก",           action:"ติดตามและดูแลตามปกติ แนะนำการดูแลสุขภาพจิต" },
+  { range:[7,12],  cls:"low",  icon:"🟡", title:"ซึมเศร้าระดับน้อย",       desc:"มีอาการซึมเศร้าในระดับน้อย ควรได้รับการดูแล",     action:"ให้คำปรึกษา Watchful waiting นัดติดตาม 2-4 สัปดาห์" },
+  { range:[13,18], cls:"mid",  icon:"⚠️", title:"ซึมเศร้าระดับปานกลาง",   desc:"มีอาการซึมเศร้าระดับปานกลาง ควรพบแพทย์",         action:"ส่งพบแพทย์/พยาบาลจิตเวช รพ.นาด้วง เพื่อรับการรักษา" },
+  { range:[19,27], cls:"high", icon:"🚨", title:"ซึมเศร้าระดับรุนแรง",     desc:"มีอาการซึมเศร้าระดับรุนแรง ต้องได้รับการรักษาทันที", action:"ส่งพบแพทย์ทันที พิจารณา Admit หากมีความเสี่ยงสูง โทร 1323" },
+];
+
+function render9Q() {
+  const el = document.getElementById('q9-items');
+  if (!el) return;
+  const scoreLabels = ['ไม่มีเลย','บางวัน','บ่อยครั้ง','แทบทุกวัน'];
+  el.innerHTML = q9Items.map((q,i) => `
+    <div style="background:rgba(255,255,255,0.04);border:1px solid ${i===8?'rgba(229,62,62,0.3)':'rgba(255,255,255,0.08)'};border-radius:14px;padding:14px 16px;margin-bottom:10px;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:10px;line-height:1.6;color:${i===8?'#fc8181':'rgba(255,255,255,0.9)'};">${q}${i===8?' <span style="font-size:11px;background:rgba(229,62,62,0.2);padding:2px 8px;border-radius:10px;color:#fc8181;margin-left:6px;">ข้อสำคัญ</span>':''}</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+        ${[0,1,2,3].map(j => `
+          <label style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:10px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all .2s;font-size:12px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.4;" id="q9-lbl-${i}-${j}">
+            <input type="radio" name="q9_${i}" value="${j}" style="accent-color:var(--teal);width:16px;height:16px;" onchange="highlightOpt('q9',${i},${j},4)">
+            <span style="font-weight:700;font-size:16px;">${j}</span>
+            <span>${scoreLabels[j]}</span>
+          </label>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+function calc9Q() {
+  let score = 0, missing = 0;
+  q9Items.forEach((_,i) => {
+    const sel = document.querySelector(`input[name="q9_${i}"]:checked`);
+    if (sel) score += parseInt(sel.value); else missing++;
+  });
+  if (missing > 0) { alert(`กรุณาตอบให้ครบทุกข้อ (ยังไม่ได้ตอบ ${missing} ข้อ)`); return; }
+  const q9val = parseInt(document.querySelector('input[name="q9_8"]:checked')?.value || 0);
+  const r = q9Results.find(a => score >= a.range[0] && score <= a.range[1]) || q9Results[q9Results.length-1];
+  let extra = q9val >= 1 ? `<div style="background:rgba(229,62,62,0.15);border:1px solid rgba(229,62,62,0.4);border-radius:10px;padding:12px 14px;margin-top:10px;"><strong style="color:#fc8181;">⚠️ ข้อ 9 มีคะแนน ${q9val} — พบความคิดทำร้ายตัวเอง</strong><br><span style="font-size:13px;color:rgba(255,255,255,0.8);">ต้องประเมินด้วย 8Q ทันที และแจ้งพยาบาลจิตเวช รพ.นาด้วง</span></div>` : '';
+  const box = document.getElementById('result-9q');
+  box.className = `result-box ${r.cls} show`;
+  box.style.display = 'block';
+  document.getElementById('r9q-icon').textContent  = r.icon;
+  document.getElementById('r9q-title').textContent = r.title;
+  document.getElementById('r9q-score').textContent = `คะแนน 9Q: ${score} / 27`;
+  document.getElementById('r9q-desc').textContent  = r.desc;
+  document.getElementById('r9q-action').innerHTML  = `<div style="background:rgba(255,255,255,0.06);border-radius:10px;padding:12px 14px;margin-top:8px;"><strong style="color:var(--teal2);">แนวทางดำเนินการ:</strong><br>${r.action}</div>${extra}`;
+  box.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+function reset9Q() {
+  document.querySelectorAll('input[name^="q9_"]').forEach(r => r.checked = false);
+  q9Items.forEach((_,i) => { for(let j=0;j<4;j++){ const l=document.getElementById(`q9-lbl-${i}-${j}`); if(l){l.style.borderColor='rgba(255,255,255,0.1)';l.style.background='rgba(255,255,255,0.03)';l.style.color='rgba(255,255,255,0.65)';}}});
+  const box = document.getElementById('result-9q');
+  box.style.display = 'none'; box.className = 'result-box';
+}
+
+render8Q();
+render9Q();
+</script>
+
+
+</body></html>
